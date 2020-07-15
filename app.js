@@ -75,3 +75,18 @@ UI.prototype.showAlert = function(message, className) {
     }, 3 * 1000);
 
 };
+
+// Delete book
+document.getElementById('book-list').addEventListener('click', function(e) {
+    const ui = new UI();
+    ui.deleteBook(e.target);
+    ui.showAlert('Book deleted', 'success');
+    e.preventDefault();
+});
+
+
+UI.prototype.deleteBook = function(target) {
+    if (target.className === 'delete') {
+        target.parentElement.parentElement.remove();
+    }
+};
