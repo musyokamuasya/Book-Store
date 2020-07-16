@@ -11,7 +11,7 @@ class Book {
 
 class UI {
     addBook(book) {
-        const list = document.getElementById('book-list');
+        const list = document.querySelector('.book-list');
         const row = document.createElement('tr');
         row.innerHTML = `
     <td>${book.title}</td>
@@ -55,7 +55,7 @@ class UI {
 }
 
 // Event Listeners
-document.querySelector('#book-form').addEventListener('submit', (e) => {
+document.querySelector('#book-form').addEventListener('click', (e) => {
     console.log('Submitted...');
     const title = document.getElementById('title').value;
     const author = document.getElementById('author').value;
